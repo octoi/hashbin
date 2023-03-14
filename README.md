@@ -10,3 +10,12 @@ Compare hash & file
 ```
 hashbin -c <file> <hash>
 ```
+## SETUP
+To run program
+```bash
+cargo run
+```
+To pass arguments
+```bash
+cargo run -- <arguments>
+```
