@@ -12,6 +12,11 @@ fn main() {
 
     let option = &args[1];
 
+    if option == "--help" {
+        print_help();
+        process::exit(0);
+    }
+
     if option == "-h" {
         if args.len() < 3 {
             println!("Error: usage: hashbin -h <file>\n");
@@ -19,9 +24,10 @@ fn main() {
             process::exit(0);
         }
 
-        let file = &args[2];
-        let hash = hash_file(file);
-        println!("{}", hash);
+        for file in &args[2..] {
+            let hash = hash_file(file);
+            println!("{} : {}", file, hash);
+        }
     } else if option == "-c" {
         if args.len() < 4 {
             println!("Error: usage: hashbin -c <file> <hash>\n");
