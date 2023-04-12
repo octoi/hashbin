@@ -19,3 +19,7 @@ To pass arguments
 ```bash
 cargo run -- <arguments>
 ```
+To build
+```bash
+$ cargo build
+```
